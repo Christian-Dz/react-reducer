@@ -1,7 +1,12 @@
 
-import { useReducer, useState } from "react"
+import { useReducer } from "react"
 
 const initialState = {contador: 0}
+const init = (initialState) => {
+    return {
+        contador: initialState.contador + 100
+    }
+}
 
 const TYPES = {
     INCREMENT: "INCREMENT",
@@ -29,7 +34,7 @@ function reducer (state, action){
 }
 
 export const Contador = () => {
-    const [state, dispatch] = useReducer(reducer, initialState)
+    const [state, dispatch] = useReducer(reducer, initialState, init)
 
     const sumar= () => dispatch ({type:TYPES.INCREMENT})
     const sumar5= () => dispatch ({type:TYPES.INCREMENT_5, payload: 5})
@@ -50,6 +55,4 @@ export const Contador = () => {
             <h3>{state.contador}</h3>
         </div>
     )
-
-
 }

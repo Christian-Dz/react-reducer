@@ -1,5 +1,9 @@
-import { useState, useReducer } from 'react'
+
 import { Contador } from './Components/Contador'
+import { ContadorMejorado } from './Components/ContadorMejorado'
+import { ShoppingCart } from './Components/ShoppingCart'
+import { CrudApi } from "./Components/CrudApi"
+
 
 
 function App() {
@@ -7,7 +11,13 @@ function App() {
 
   return (
     <>
-     <Contador/>
+      <CrudApi/>
+      <hr/>
+      <ShoppingCart/>
+      <hr/>
+      <ContadorMejorado/>
+      <hr/>
+      <Contador/>
     </>
   )
 }
